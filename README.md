@@ -1,0 +1,1 @@
+# This repository is created as a notepad for my solutions.
