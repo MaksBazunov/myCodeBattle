@@ -1,0 +1,14 @@
+Если число делится на 3, верните "Fizz". Если число делится на 5, верните "Buzz". Если число делится на 3 и 5, верните "FizzBuzz". В ином случае верните пустую строку.
+
+Примеры:
+
+"Fizz"  == solution(3)
+"Buzz"  == solution(50)
+"FizzBuzz"  == solution(150)
+"FizzBuzz"  == solution(5175)
+
+const solution = (n) => {
+	if (n%15 === 0) return 'FizzBuzz';
+	if  (n%3 === 0) return 'Fizz';
+	if (n%5 === 0) return 'Buzz';
+};
