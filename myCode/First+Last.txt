@@ -1,0 +1,18 @@
+Создайте функцию, которая извлекает из хеша имя и фамилию и собирает их в одну строку.
+
+Примеры:
+
+["John Doe","Rich Hickey"]  == solution([{"first":"John","last":"Doe"},{"first":"Rich","last":"Hickey"}])
+[
+    "Harold Abelson","Gerald Jay Sussman","Pat Shaughnessy","Matthias Felleisen"]  == 
+solution([{"first":"Harold","last":"Abelson"},
+  {"first":"Gerald","last":"Jay Sussman"},
+  {"first":"Pat","last":"Shaughnessy"},
+  {"first":"Matthias","last":"Felleisen"}])
+
+Решение:
+
+  const solution = (names) => {
+    const y = names.map((sol)=>  `${sol.first} ${sol.last}`)
+   return y
+};
