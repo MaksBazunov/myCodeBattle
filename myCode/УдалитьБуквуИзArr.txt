@@ -1,0 +1,16 @@
+Создайте функцию, которая удаляет каждый символ из всех строк в массиве.
+
+Примеры:
+
+["es","wo","example"]  == solution(["test","two","example"], "t")
+
+const solution = (words, character) => {
+	const result = [];
+	for (const i of words){
+	   const y = i.replace(character, '')
+	    result.push(y)
+	}
+	return result
+};
+
+console.log(solution(["test","two","example"], "t"));
