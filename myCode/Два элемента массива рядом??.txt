@@ -1,0 +1,20 @@
+Сэму и Фродо надо держаться вместе. Проверьте, нет ли между ними других персонажей.
+
+Примеры:
+
+true  == solution(["Sam","Frodo","Troll","Balrog","Human"])
+false  == solution(["Orc","Frodo","Treant","Saruman","Sam"])
+true  == solution(["Orc","Sam","Frodo","Gandalf","Legolas"])
+
+
+const solution = (persons) => {
+	const y = []
+ for ( const i of persons){
+	  if ( i === 'Sam' || i === 'Frodo') {
+			y.push(persons.indexOf(i));
+		}
+	
+ }
+if (y[0]-y[1] ===1 || y[1]-y[0] === 1) return true;
+return false
+};
