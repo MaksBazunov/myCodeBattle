@@ -1,0 +1,46 @@
+Реализуйте и экспортируйте по умолчанию функцию, которая принимает на вход массив чисел и искомое число. Задача функции — найти в массиве ближайшее число к искомому и вернуть его индекс в массиве.
+
+Если в массиве содержится несколько чисел, одновременно являющихся ближайшими к искомому числу, то возвращается наименьший из индексов ближайших чисел.
+
+Примеры
+findIndexOfNearest([], 2);              // null
+findIndexOfNearest([15, 10, 3, 4], 0);  // 2
+findIndexOfNearest([7, 5, 3, 2], 4);    // 1
+findIndexOfNearest([7, 5, 4, 4, 3], 4); // 2
+
+вариант 1
+
+const findIndexOfNearest = (first, second) => {
+  if (!first.length) return null;
+  const newarr = [...first];
+  newarr[newarr.length] = second;
+  const y = newarr.sort(function (a, b) {
+    return a - b
+  });
+  const ind2 = y.indexOf(second)
+  const num1 = y[[ind2 - 1]]
+  const num2 = y[[ind2 + 1]]
+
+  const indnum1 = first.indexOf(num1);
+  const indnum2 = first.indexOf(num2);
+
+  if (second === 0) return first.indexOf(y[1])
+  if ((num2 - second) > (second - num1)) return indnum1
+  if ((num2 - second) === (second - num1)) return indnum2
+  return indnum2
+}
+
+
+вариант 2
+
+export default (numbers, num) => {
+  if (numbers.length === 0) {
+    return null;
+  }
+
+  const diffs = numbers.map((element) => Math.abs(num - element));
+
+  return diffs.reduce((index, diff, currentIndex) => (
+    diff < diffs[index] ? currentIndex : index
+  ), 0);
+};
